@@ -185,14 +185,6 @@ if ( $("#cbType2").is(':checked')) searchType += "2018,";
 if ( $("#cbType3").is(':checked')) searchType += "2019,";
 if ( $("#cbType4").is(':checked')) searchType += "2020,";        
 self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
-        var type_column = "'Type'";
-
-if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=Appartement";
-if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=APP+Villa";
-if ( $("#rbType3").is(':checked')) self.whereClause += " AND " + type_column + "=Villa";
-if ( $("#rbType5").is(':checked')) self.whereClause += " AND " + type_column + "=terrain";
-if ( $("#rbType4").is(':checked')) self.whereClause += " AND " + type_column + "=LMNP";        
-        
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
