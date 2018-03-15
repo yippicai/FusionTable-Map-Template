@@ -86,6 +86,7 @@
         $("#result_box").hide();
 
         //-----custom initializers-----
+        $("#text_search").val("");
         //-----end of custom initializers-----
 
         //run the default search when page loads
@@ -185,6 +186,9 @@ if ( $("#cbType2").is(':checked')) searchType += "2018,";
 if ( $("#cbType3").is(':checked')) searchType += "2019,";
 if ( $("#cbType4").is(':checked')) searchType += "2020,";        
 self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
+var text_search = $("#text_search").val().replace("'", "\\'");
+if (text_search != '')
+  self.whereClause += " AND 'QUARTIER' contains ignoring case '" + text_search + "'";        
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
