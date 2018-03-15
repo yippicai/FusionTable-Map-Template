@@ -190,8 +190,8 @@ self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
 if ( $("#rbType1").is(':checked')) self.whereClause += " AND " + type_column + "=Appartement";
 if ( $("#rbType2").is(':checked')) self.whereClause += " AND " + type_column + "=APP+Villa";
 if ( $("#rbType3").is(':checked')) self.whereClause += " AND " + type_column + "=Villa";
-if ( $("#rbType3").is(':checked')) self.whereClause += " AND " + type_column + "=terrain";
-if ( $("#rbType3").is(':checked')) self.whereClause += " AND " + type_column + "=LMNP";        
+if ( $("#rbType5").is(':checked')) self.whereClause += " AND " + type_column + "=terrain";
+if ( $("#rbType4").is(':checked')) self.whereClause += " AND " + type_column + "=LMNP";        
         
         //-----end of custom filters-----
 
