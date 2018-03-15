@@ -178,6 +178,13 @@
         self.whereClause = self.locationColumn + " not equal to ''";
         
         //-----custom filters-----
+        var type_column = "'Année'";
+var searchType = type_column + " IN (-1,";
+if ( $("#cbType1").is(':checked')) searchType += "2017,";
+if ( $("#cbType2").is(':checked')) searchType += "2018,";
+if ( $("#cbType3").is(':checked')) searchType += "2019,";
+if ( $("#cbType3").is(':checked')) searchType += "2020,";        
+self.whereClause += " AND " + searchType.slice(0, searchType.length - 1) + ")";
         //-----end of custom filters-----
 
         self.getgeoCondition(address, function (geoCondition) {
